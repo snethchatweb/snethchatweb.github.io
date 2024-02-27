@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconectado</title>
+</head>
+<body>
+    <h1>essa sessão não esta disponivel</h1>
+    <p>sua sessão do Sneth Chat web foi desconectada</p>
+    <button onclick="voltarParaTelaInicial()">Voltar para a Tela Inicial</button>
+
+    <script>
+        function voltarParaTelaInicial() {
+            // Carrega o arquivo index.html
+            window.location.href = "index.html";
+
+            // Fecha a janela atual (opcional)
+            window.close();
+        }
+    </script>
+</body>
+</html>

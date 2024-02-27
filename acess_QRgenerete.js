@@ -58,7 +58,50 @@
         .then(snapshot => {
           var deviceApproved = snapshot.val().deviceApproved;
 
-          // If the device is approved, show a success message and the device data
+          // If the device is approved, show a success message and the device databaseURL
+          // Função para obter o valor de um cookie pelo seu nome
+function getCookie(name) {
+  // Cria uma variável com o nome e o sinal de igual
+  var cookieName = name + "=";
+  // Obtém todos os cookies do documento
+  var allCookies = document.cookie;
+  // Divide os cookies em um array
+  var cookiesArray = allCookies.split(';');
+  // Percorre o array de cookies
+  for(var i = 0; i < cookiesArray.length; i++) {
+    // Obtém o cookie atual
+    var cookie = cookiesArray[i];
+    // Remove os espaços em branco do início do cookie
+    while (cookie.charAt(0) == ' ') {
+      cookie = cookie.substring(1);
+    }
+    // Verifica se o cookie atual começa com o nome desejado
+    if (cookie.indexOf(cookieName) == 0) {
+      // Retorna o valor do cookie, removendo o nome e o sinal de igual
+      return cookie.substring(cookieName.length, cookie.length);
+    }
+  }
+  // Retorna uma string vazia se o cookie não for encontrado
+  return "";
+}
+
+// Função para verificar se o deviceaproved é igual a true
+function checkDeviceApproved() {
+  // Obtém o valor do cookie deviceaproved
+  var deviceApproved = getCookie("deviceaproved=");
+  // Verifica se o valor é igual a "true"
+  if (deviceApproved == "true") {
+    // Carrega o arquivo HTML public/index.html
+    window.location.href = 'chats.html';
+  } else {
+    // Mostra uma mensagem no console aguardando aprovação
+    console.log("Aguardando aprovação do dispositivo");
+  }
+}
+
+// Chama a função checkDeviceApproved quando a página é carregada
+window.onload = checkDeviceApproved;
+
           if (deviceApproved) {
             var status = document.getElementById("status");
             status.innerHTML = "Login realizado com sucesso!";
@@ -66,6 +109,13 @@
 
             var deviceData = JSON.stringify(snapshot.val(), null, 2);
             alert("Dados do dispositivo:\n" + deviceData);
+            if (document.cookie.indexOf("deviceaproved=true") >= 0) {
+    console.log("dispositivo logado com sucesso");
+     window.location.href = 'chats.html';
+} else {
+    console.log("não logado");
+}
+
 
             // Stop checking the deviceApproved status
             clearInterval(checkInterval);
@@ -76,6 +126,49 @@
         })
         .catch(error => console.error(error));
     }, 2000);
+
+// Função para obter o valor de um cookie pelo seu nome
+function getCookie(name) {
+  // Cria uma variável com o nome e o sinal de igual
+  var cookieName = name + "=";
+  // Obtém todos os cookies do documento
+  var allCookies = document.cookie;
+  // Divide os cookies em um array
+  var cookiesArray = allCookies.split(';');
+  // Percorre o array de cookies
+  for(var i = 0; i < cookiesArray.length; i++) {
+    // Obtém o cookie atual
+    var cookie = cookiesArray[i];
+    // Remove os espaços em branco do início do cookie
+    while (cookie.charAt(0) == ' ') {
+      cookie = cookie.substring(1);
+    }
+    // Verifica se o cookie atual começa com o nome desejado
+    if (cookie.indexOf(cookieName) == 0) {
+      // Retorna o valor do cookie, removendo o nome e o sinal de igual
+      return cookie.substring(cookieName.length, cookie.length);
+    }
+  }
+  // Retorna uma string vazia se o cookie não for encontrado
+  return "";
+}
+
+// Função para verificar se o deviceaproved é igual a true
+function checkDeviceApproved() {
+  // Obtém o valor do cookie deviceaproved
+  var deviceApproved = getCookie("deviceaproved");
+  // Verifica se o valor é igual a "true"
+  if (deviceApproved == "true") {
+    // Carrega o arquivo HTML public/index.html
+    window.location.href = 'chats.html';
+  } else {
+    // Mostra uma mensagem no console aguardando aprovação
+    console.log("Aguardando aprovação do dispositivo");
+  }
+}
+
+// Chama a função checkDeviceApproved quando a página é carregada
+window.onload = checkDeviceApproved;
 
     // Generate a new QR code every 16 seconds
     var generateInterval = setInterval(function() {

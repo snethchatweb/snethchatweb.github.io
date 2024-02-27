@@ -1,257 +1,238 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <title>Chat com Copilot</title>
-  <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-                
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, lightblue, lightgreen);
-    }
-
-    #container {
-      display: flex;
-      height: 100vh;
-    }
-
-    #sidebar {
-      width: 25%;
-      background: white;
-      overflow-y: scroll;
-    }
-
-    #sidebar h1 {
-      text-align: center;
-      padding: 10px;
-      color: blue;
-    }
-
-    #sidebar ul {
-      list-style: none;
-    }
-
-    #sidebar li {
-      padding: 10px;
-      border-bottom: 1px solid lightgray;
-    }
-
-    #sidebar li.active {
-      background: lightblue;
-    }
-
-    #sidebar li:hover {
-      cursor: pointer;
-      background: lightgreen;
-    }
-
-    #main {
-      width: 75%;
-      background: white;
-      overflow-y: scroll;
-    }
-
-    #main h1 {
-      text-align: center;
-      padding: 10px;
-      color: green;
-    }
-
-    #main ul {
-      list-style: none;
-      padding: 10px;
-    }
-
-    #main li {
-      margin: 10px;
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    #main li.sent {
-      background: lightgreen;
-      align-self: flex-end;
-    }
-
-    #main li.received {
-      background: lightblue;
-      align-self: flex-start;
-    }
-
-    #input {
-      display: flex;
-      align-items: center;
-      background: lightgray;
-      padding: 10px;
-    }
-
-    #input input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 10px;
-    }
-
-    #input button {
-      border: none;
-      outline: none;
-      background: blue;
-      color: white;
-      padding: 10px;
-      margin-left: 10px;
-    }
-
-    #input button:hover {
-      cursor: pointer;
-      background: green;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/391827d54c.js" crossorigin="anonymous"></script>
+  <script src="chats.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>sneth chat web</title>
 </head>
 <body>
-  <div id="container">
-    <div id="sidebar">
-      <h1>Sneth Chat Web</h1>
-      <ul id="contacts">
-        <li class="active">Contatos</li>
-        <li>Grupos</li>
-        <li>Status</li>
-      </ul>
+  <div class="background-green"></div>
+
+
+  <div class="main-container">
+    <div class="left-container">
+
+<!--header -->
+      <div class="header">
+        <div class="user-img">
+          <img class="dp" src="https://www.codewithfaraz.com/InstaPic.png" alt="">
+        </div>
+        <div class="nav-icons">
+          <li><i class="fa-solid fa-users"></i></li>
+          <li><i class="fa-solid fa-message">
+ </i></li>
+          <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+        </div>
+      </div>
+
+
+<!--notification -->
+      <div class="notif-box">
+        <i class="fa-solid fa-bell-slash"></i>
+        <div class="notif-text">
+             <p>Get Notified of New Messages</p>
+             <a href="#">Turn on Desktop Notifications ›</a>
+            </div>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+<!--search-container -->
+      <div class="search-container">
+        <div class="input">
+<i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search or start new chat   "></div>
+     <i class="fa-sharp fa-solid fa-bars-filter"></i>
+      </div>
+
+
+<!--chats -->
+      <div class="chat-list">
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://lh5.googleusercontent.com/-7ssjf_mDE1Q/AAAAAAAAAAI/AAAAAAAAASo/tioYx2oklWEHoo5nAEyCT-KeLxYqE5PuQCLcDEAE/s100-c-k-no-mo/photo.jpg" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Nowfal</h4>
+              <p class="time unread">11:49</p>
+            </div>
+            <div class="text-message">
+              <p>“How are you?”</p>
+              <b>1</b>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Rohan</h4>
+              <p class="time unread">10:49</p>
+            </div>
+            <div class="text-message">
+              <p>“I’ll be there.”</p>
+              <b>4</b>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/8367221/pexels-photo-8367221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Zoya</h4>
+              <p class="time unread">09:49</p>
+            </div>
+            <div class="text-message">
+              <p>“Make somebody’s day.”</p>
+              <b>2</b>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Ava</h4>
+              <p class="time">08:49</p>
+            </div>
+            <div class="text-message">
+              <p>“Dreams come true.”</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box active">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/2474307/pexels-photo-2474307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Leo</h4>
+              <p class="time">07:49</p>
+            </div>
+            <div class="text-message">
+              <p>Awesome! I'll start a vid..</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/3564412/pexels-photo-3564412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Azariah</h4>
+              <p class="time">06:49</p>
+            </div>
+            <div class="text-message">
+              <p>“Love, light, laughter.”</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/2919367/pexels-photo-2919367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Oliver</h4>
+              <p class="time unread">Yesterday</p>
+            </div>
+            <div class="text-message">
+              <p>“Appreciate the mome..”</p>
+              <b>2</b>
+            </div>
+          </div>
+        </div>
+        <div class="chat-box">
+          <div class="img-box">
+            <img class="img-cover" src="https://images.pexels.com/photos/14526673/pexels-photo-14526673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+          </div>
+          <div class="chat-details">
+            <div class="text-head">
+              <h4>Jeslin</h4>
+              <p class="time">Yesterday</p>
+            </div>
+            <div class="text-message">
+              <p>“Now or never.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div id="main">
-      <h1>Conversa com <span id="user-name"></span></h1>
-      <ul id="messages">
-      </ul>
-      <div id="input">
-        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
-        <button id="send-button">Enviar</button>
+
+
+
+
+
+    <div class="right-container">
+<!--header -->
+      <div class="header">
+        <div class="img-text">
+          <div class="user-img">
+          <img class="dp" src="https://images.pexels.com/photos/2474307/pexels-photo-2474307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        </div>
+          <h4>Leo<br><span>Online</span></h4>
+        </div>
+        <div class="nav-icons">
+          <li><i class="fa-solid fa-magnifying-glass"></i></li>
+          <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+        </div>
+      </div>
+
+<!--chat-container -->
+      <div class="chat-container">
+        <div class="message-box my-message">
+          <p>I've been waiting to see that show asap!<br><span>07:43</span></p>
+        </div>
+        <div class="message-box friend-message">
+          <p>Ahh, I can't believe you do too!<br><span>07:45</span></p>
+        </div>
+        <div class="message-box friend-message">
+          <p>The trailer looks good<br><span>07:45</span></p>
+        </div>
+        <div class="message-box friend-message">
+          <p>I've been waiting to watch it!!<br><span>07:45</span></p>
+        </div>
+        <div class="message-box my-message">
+          <p>😐😐😐<br><span>07:46</span></p>
+        </div>
+        <div class="message-box my-message">
+          <p>Mee too! 😊<br><span>07:46</span></p>
+        </div>
+      <div class="message-box friend-message">
+          <p>We should video chat to discuss, if you're up for it!<br><span>07:48</span></p>
+        </div>
+        <div class="message-box my-message">
+          <p>Sure<br><span>07:48</span></p>
+        </div>
+        <div class="message-box my-message">
+          <p>I'm free now!<br><span>07:48</span></p>
+        </div>
+      <div class="message-box friend-message">
+          <p>Awesome! I'll start a video chat with you in a few.<br><span>07:49</span></p>
+        </div>
+      </div>
+
+<!--input-bottom -->
+      <div class="chatbox-input">
+        <i class="fa-regular fa-face-grin"></i>
+        <i class="fa-sharp fa-solid fa-paperclip"></i>
+        <input type="text" placeholder="Type a message">
+        <i class="fa-solid fa-microphone"></i>
       </div>
     </div>
+
   </div>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    var firebaseConfig = {
-      apiKey: "AIzaSyBbCOS02NPFgFKK8X6tIG-4gwFCZ2WgyZY",
-      authDomain: "sneth-chat-51c06.firebaseapp.com",
-      databaseURL: "https://sneth-chat-51c06-default-rtdb.firebaseio.com",
-      projectId: "sneth-chat-51c06",
-      storageBucket: "sneth-chat-51c06.appspot.com",
-      messagingSenderId: "245152719854",
-      appId: "1:245152719854:web:a5867e51fa8ff7609be4ff"
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    // Get elements
-    var contacts = document.getElementById("contacts");
-    var userName = document.getElementById("user-name");
-    var messages = document.getElementById("messages");
-    var messageInput = document.getElementById("message-input");
-    var sendButton = document.getElementById("send-button");
-
-    // Set user ids
-    var myId = "user1"; // You can change this to any string
-    var otherId = "user2"; // You can change this to any string
-
-    // Set user name
-    userName.textContent = otherId;
-
-    // Listen for contacts click
-    contacts.addEventListener("click", function(e) {
-      var target = e.target;
-      if (target.tagName === "LI") {
-        // Remove active class from previous li
-        var active = contacts.querySelector(".active");
-        if (active) {
-          active.classList.remove("active");
-        }
-        // Add active class to current li
-        target.classList.add("active");
-        // Clear messages
-        messages.innerHTML = "";
-        // Set user name
-        userName.textContent = target.textContent;
-        // Set other id
-        otherId = target.textContent;
-        // Load messages
-        loadMessages();
-      }
-    });
-
-    // Listen for send button click
-    sendButton.addEventListener("click", function() {
-      // Get message text
-      var messageText = messageInput.value;
-      // Check if not empty
-      if (messageText) {
-        // Clear input
-        messageInput.value = "";
-        // Send message to Firebase
-        sendMessage(messageText);
-      }
-    });
-
-    // Listen for enter key press
-    messageInput.addEventListener("keypress", function(e) {
-      if (e.keyCode === 13) {
-        // Trigger send button click
-        sendButton.click();
-      }
-    });
-
-    // Function to send message to Firebase
-    function sendMessage(messageText) {
-      // Get current timestamp
-      var timestamp = Date.now();
-      // Create message object
-      var message = {
-        sender: myId,
-        receiver: otherId,
-        text: messageText,
-        time: timestamp
-      };
-      // Push message to Firebase
-      firebase.database().ref("messages").push(message);
-    }
-
-    // Function to load messages from Firebase
-    function loadMessages() {
-      // Get messages reference
-      var messagesRef = firebase.database().ref("messages");
-      // Listen for new messages
-      messagesRef.on("child_added", function(snapshot) {
-        // Get message data
-        var message = snapshot.val();
-        // Check if message is for current chat
-        if ((message.sender === myId && message.receiver === otherId) || (message.sender === otherId && message.receiver === myId)) {
-          // Display message
-          displayMessage(message);
-        }
-      });
-    }
-
-    // Function to display message
-    function displayMessage(message) {
-      // Create li element
-      var li = document.createElement("li");
-      // Set li class based on sender
-      li.className = message.sender === myId ? "sent" : "received";
-      // Set li text
-      li.textContent = message.text;
-      // Append li to messages
-      messages.appendChild(li);
-      // Scroll to bottom
-      messages.scrollTop = messages.scrollHeight;
-    }
-
-    // Load messages initially
-    loadMessages();
-  </script>
 </body>
 </html>
