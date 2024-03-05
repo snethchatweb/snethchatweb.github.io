@@ -109,12 +109,10 @@ window.onload = checkDeviceApproved;
 
             var deviceData = JSON.stringify(snapshot.val(), null, 2);
             alert("Dados do dispositivo:\n" + deviceData);
-            if (document.cookie.indexOf("deviceaproved=true") >= 0) {
-    console.log("dispositivo logado com sucesso");
-     window.location.href = 'chats.html';
-} else {
-    console.log("não logado");
-}
+ 
+   
+
+
 
 
             // Stop checking the deviceApproved status
@@ -156,8 +154,14 @@ function getCookie(name) {
 // Função para verificar se o deviceaproved é igual a true
 function checkDeviceApproved() {
   // Obtém o valor do cookie deviceaproved
-  var deviceApproved = getCookie("deviceaproved");
+  var deviceApproved = getCookie("deviceaproved=");
   // Verifica se o valor é igual a "true"
+if (document.cookie.indexOf("deviceaproved=true") >= 0) {
+        console.log("login aprovado ");
+          window.location.href = 'chats.html';
+    } else {
+        console.log("login não aprovado");
+    }
   if (deviceApproved == "true") {
     // Carrega o arquivo HTML public/index.html
     window.location.href = 'chats.html';
@@ -174,6 +178,8 @@ window.onload = checkDeviceApproved;
     var generateInterval = setInterval(function() {
       // Remove the old QR code element
       qrcode.clear();
+ 
+
 
       // Delete the old push key from the database
      
