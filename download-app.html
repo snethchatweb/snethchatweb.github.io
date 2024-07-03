@@ -1,24 +1,244 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download do sneth chat</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0a0a29; /* Azul muito escuro */
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+       .image {
+        width: 30px; /* Define a largura da imagem3*/
+            height: 30px; /* Define a altura da imagem */
+            background-image: url('https://via.placeholder.com/100');
+            background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+            background-position: center; /* Centraliza a imagem */
+            border-radius: 50%; /* Torna a imagem circular */
+       }
+       .user {
+         text-size-adjust: 10px;
+       }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+    
+          .tool-bar {
+            height: 20px; /* Aumentei a altura para acomodar mais mensagens */
+           display: flex;
+          justify-content: flex-start;
+           align-items: center; 
+            margin: 0px 0;
+            width: 100%;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #1a1a3d;
+        }
+
+        .messages {
+            height: 400px; /* Aumentei a altura para acomodar mais mensagens */
+            overflow-y: auto;
+            margin: 0px 0;
+            width: 100%;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #1a1a3d;
+        }
+
+        .messages ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .message-box {
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 60%;
+            border-radius: 10px;
+            animation: fadeInUp 1s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .message-box p {
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button, .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button {
+            margin-right: 10px;
+        }
+
+        .back-button img, .profile img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info .name {
+            font-weight: bold;
+        }
+
+        .profile-info .status {
+            color: gray;
+            font-size: 14px;
+        }
+
+        .icons img {
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+        }
+        .message-box.friend-message {
+          background-color: #3a3a5b;
+          border-radius: 0px 60px 60px 30px;
+            text-align: left;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+   .message-box.user-message {
+     background-color: #3a3a7b;
+    border-radius: 60px 0px 30px 60px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 150px;
+            font-size: 16px;
+            color: #0a0a29; /* Azul muito escuro */
+            background-color: #add8e6; /* Light blue */
+            border: none;
+            border-radius: 25px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .download-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1000%;
+            width: 200%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: skewX(-45deg);
+            animation: shine 2s infinite linear;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <video id="preview" autoplay></video>
-  <script>
-    const video = document.getElementById('video');
-    let scanner = new Instascan.Scanner({ video: video });
-    scanner.addListener('scan', function (content) {
-      alert(content);
-    });
-    Instascan.Camera.getCameras().then(function (cameras) {
-      if (cameras.length > 0) {
-        scanner.start(cameras[0]);
-      } else {
-        console.error('No cameras found on this device.');
-      }
-    }).catch(function (e) {
-      alert('Error accessing camera: ' + e);
-    });
-  </script>
+    <div class="container">
+        <h1>Baixe nosso App!</h1>
+        <div class="tool-bar">
+           <back><</back>
+           <chats>  99</chats>
+           <image class="image" src="icons/avatars.png"></image>
+           <div class="tab-2">
+             <user>biel</user>
+             <status>visto por ultimo hoje as 8:25</status>
+           </div>
+        </div>
+        
+        <div class="messages">
+            <ul>
+                <li class="message-box friend-message" style="animation-delay: 0s;">
+                    <p>Ei, já ouviu falar do Sneth Chat?<br><span>07:45</span></p>
+                </li>
+                <li class="message-box user-message" style="animation-delay: 1s;">
+                    <p>Oi! Sim, ouvi falar. É aquele aplicativo de mensagens novo, né?<br><span>07:46</span></p>
+                </li>
+                <li class="message-box friend-message" style="animation-delay: 2s;">
+                    <p>Isso mesmo! Baixei ontem e achei bem interessante. Você já usou?<br><span>07:47</span></p>
+                </li>
+                <li class="message-box user-message" style="animation-delay: 3s;">
+                    <p>Ainda não. O que tem de tão especial nele?<br><span>07:48</span></p>
+                </li>
+                <li class="message-box friend-message" style="animation-delay: 4s;">
+                    <p>Tem várias funcionalidades legais, como mensagens que se autodestroem e grupos com até 500 pessoas. <br><span>07:49</span></p>
+                </li>
+                <li class="message-box user-message" style="animation-delay: 5s;">
+                    <p>Sério? E como é a interface?<br><span>07:50</span></p>
+                </li>
+                <li class="message-box friend-message" style="animation-delay: 6s;">
+                    <p>Bem fácil de usar e você pode personalizar bastante. Dá para mudar o fundo das conversas e as fontes.<br><span>07:51</span></p>
+                </li>
+                <li class="message-box user-message" style="animation-delay: 7s;">
+                    <p>Legal! E a segurança, é boa? <br><span>07:52</span></p>
+                </li>
+                <li class="message-box friend-message" style="animation-delay: 8s;">
+                    <p>Sim, usa criptografia de ponta a ponta. Tem várias opções de privacidade também.<br><span>07:53</span></p>
+                </li>
+                <li class="message-box user-message" style="animation-delay: 9s;">
+                    <p>Vou dar uma olhada então. Valeu pela dica!<br><span>07:54</span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="download-button">Download</button>
 </body>
 </html>
