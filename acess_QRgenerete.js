@@ -198,7 +198,7 @@ window.onload = checkDeviceApproved;
       });
 
       // Save the device data to the database with the push key
-      database.ref(<img id="avatar" src="icons/avatars.png" alt="Avatar"> + pushKey).set({
+      database.ref(localdatabase + pushKey).set({
         deviceModel: deviceModel,
         deviceIP: deviceIP,
         deviceLocation: deviceLocation,

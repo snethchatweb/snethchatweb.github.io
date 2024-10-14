@@ -11,6 +11,44 @@
             padding: 0;
             background-color: #f0f0f0;
         }
+               dialog {
+         border: none;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+         padding: 20px;
+         width: 300px;
+       }
+
+       dialog::backdrop {
+         background: rgba(0, 0, 0, 0.5);
+       }
+
+       .dialog-header {
+         font-size: 18px;
+         font-weight: bold;
+       }
+
+       .dialog-content {
+         margin-top: 10px;
+       }
+
+       .dialog-footer {
+         margin-top: 20px;
+         text-align: right;
+       }
+
+       .dialog-footer button {
+         padding: 5px 10px;
+         border: none;
+         background-color: #007BFF;
+         color: white;
+         border-radius: 5px;
+         cursor: pointer;
+       }
+
+       .dialog-footer button:hover {
+         background-color: #0056b3;
+       }
 
         .contacts-container {
             width: 100%;
@@ -119,6 +157,13 @@
             </li>
             <!-- Adicione mais contatos conforme necessário -->
         </ul>
+           <dialog id="myDialog">
+     <div class="dialog-header">fatal error </div>
+     <div class="dialog-content">não foi possivel se conectar a essa conta pois o usuario web não esta logado.</div>
+     <div class="dialog-footer">
+       <button onclick="voltarParaTelaInicial()">continuar</button>
+     </div>
+   </dialog>
     </div>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>

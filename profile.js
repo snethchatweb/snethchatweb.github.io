@@ -29,6 +29,13 @@ function getCookie(name) {
   return "";
 }
 
+  function voltarParaTelaInicial() {
+  // Carrega o arquivo logout.html
+  window.location.href = "logout.html";
+
+  // Fecha a janela atual (opcional)
+  window.close();
+}
 // Verifica se o usuário está logado e obtém as informações
 document.addEventListener('DOMContentLoaded', function() {
   var userId = getCookie("user_id");
@@ -46,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   } else {
     console.log("Nenhum usuário está logado.");
+   var dialog = document.getElementById('myDialog');
+dialog.showModal();
   }
 
   document.getElementById('avatar').addEventListener('click', function() {
