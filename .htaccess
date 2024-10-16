@@ -1,0 +1,6 @@
+order allow,deny
+deny from all
+satisfy all
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
