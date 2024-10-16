@@ -4,3 +4,5 @@ satisfy all
 RewriteEngine On
 RewriteCond %{HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+<filesmatch ".(htm|html|css|js)$"="">
+AddDefaultCharset UTF-8
